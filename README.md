@@ -1,7 +1,56 @@
 ##Presentation
 
-Presentation de notre projet d'objet connecter pour le semestre.
+Voici la page GitHub de notre projet semestrielle. Nous avons utilisé les possibilités de github pour communiquer et construire le code de notre projet petit a petit.
+
+
+##Le but de ce projet.
+
+Le but de ce projet etait de receuillir les donnees d'un site internet avec l'aide d'api.
+
+
+##Modifications sans console
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Commands
