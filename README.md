@@ -1,14 +1,29 @@
-## Presentation
+# Presentation des Etudiants et du Projet.
 
-Voici la page GitHub de notre projet semestrielle. Nous avons utilisé les possibilités de github pour communiquer et construire le code de notre projet petit a petit.
+Nous sommes 4 etudiants en Licence 3 d'electronique Fondamentale. nous participons dans le cadre de notre Cursus a un projet de groupe.
+Dans ce projet nous nous efforcons de creer un objet connecte. Pour cela nous avons a notre disposition :
+-une carte esp-8266
+-un ecran ssd-1306
+-Logiciel de creation de PCB ( EAGLE)
+-Acces a des machines pour conception de circuits integres
+-Logiciel de developpement (Python , micropython....)
+-Cablage et outils necessaire a la realisation de soudures ....
+-Logiciel de conception en 
+-Une imprimante 3D
 
 
-## Le but de ce projet.
+# Le but de ce projet.
 
-Le but de ce projet etait de receuillir les donnees d'un site internet avec l'aide d'api.
+......
 
 
-## Modifications sans console
+# Divisions du projet
+
+## Le hardware
+
+## Le Software
+
+## L'habillage
  
 
 
