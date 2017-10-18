@@ -1,17 +1,3 @@
-# Welcome to MkDocs
+# Notre projet
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Nous sommes 4 etudiants en Licence 3 d'electronique Fondamentale. nous participons dans le cadre de notre Cursus a un projet de groupe. 

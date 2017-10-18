@@ -1,1 +1,9 @@
-site_name: My Docs
+site_name: Affichage meteo
+pages:
+- Presentation du projet: index.md
+- Le hardware: le hardware.md
+- Le software: le software.md
+- Habillage: habillage.md
+
+theme: readthedocs    
+  
