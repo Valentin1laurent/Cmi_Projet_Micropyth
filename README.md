@@ -1,4 +1,4 @@
-## Presentation des Etudiants et du Projet.
+# Presentation des Etudiants et du Projet.
 
 Nous sommes 4 etudiants en Licence 3 d'electronique Fondamentale. nous participons dans le cadre de notre Cursus a un projet de groupe.
 Dans ce projet nous nous efforcons de creer un objet connecte. Pour cela nous avons a notre disposition :
@@ -12,18 +12,18 @@ Dans ce projet nous nous efforcons de creer un objet connecte. Pour cela nous av
 -Une imprimante 3D
 
 
-## Le but de ce projet.
+# Le but de ce projet.
 
 ......
 
 
-## Divisions du projet
+# Divisions du projet
 
-# Le hardware
+## Le hardware
 
-# Le Software
+## Le Software
 
-# L'habillage
+## L'habillage
  
 
 
