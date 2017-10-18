@@ -1,6 +1,7 @@
 site_name: Projet_CMI
 pages:
-    - Home: README.md
+	- Home: README.md
+	- Hardware: Hardware.md
 
 
 
