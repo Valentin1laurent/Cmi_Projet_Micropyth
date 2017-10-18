@@ -15,7 +15,7 @@ import json
 
 sta_if = network.WLAN(network.STA_IF)
 sta_if.active(True)
-sta_if.connect('iPhone de Salma', 'salmajari')
+sta_if.connect('<username>', '<password>')
 
 
    
