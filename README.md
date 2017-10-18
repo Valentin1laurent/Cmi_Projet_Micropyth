@@ -8,7 +8,7 @@ Dans ce projet nous nous efforcons de creer un objet connecte. Pour cela nous av
 -Acces a des machines pour conception de circuits integres
 -Logiciel de developpement (Python , micropython....)
 -Cablage et outils necessaire a la realisation de soudures ....
--Logiciel de conception en 3D
+-Logiciel de conception en 
 -Une imprimante 3D
 
 
