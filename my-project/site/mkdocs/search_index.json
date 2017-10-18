@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/le hardware/", 
-            "text": "le hardware\n\n\nAlimentation", 
+            "text": "le hardware\n\n\nAlimentation\n\n\nTEST", 
             "title": "Le hardware"
         }, 
         {
@@ -24,6 +24,11 @@
             "location": "/le hardware/#alimentation", 
             "text": "", 
             "title": "Alimentation"
+        }, 
+        {
+            "location": "/le hardware/#test", 
+            "text": "", 
+            "title": "TEST"
         }, 
         {
             "location": "/le software/", 
