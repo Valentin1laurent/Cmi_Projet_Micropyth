@@ -19,3 +19,4 @@ for j in range(len(listline)):#j est donc le numero de ligne
     oled.pixel(compteur,j+10,int(i))
    compteur=compteur+1
 oled.show()
+print()
