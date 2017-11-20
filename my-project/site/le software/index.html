@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Le software - Affichage meteo</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Le software";
+    var mkdocs_page_input_path = "le software.md";
+    var mkdocs_page_url = "/le software/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Affichage meteo</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Presentation du projet</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../le%20hardware/">Le hardware</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Le software</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#le-software">LE SOFTWARE</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#outils-utilises-avec-python">Outils utilises avec PYTHON</a></li>
+        
+            <li><a class="toctree-l3" href="#algorithme-de-recuperation-des-donnees-meteorologiques">Algorithme de recuperation des donnees meteorologiques</a></li>
+        
+            <li><a class="toctree-l3" href="#developpement-en-micro-python">Developpement en MICRO-PYTHON</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#code">CODE</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../habillage/">Habillage</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Affichage meteo</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Le software</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="le-software">LE SOFTWARE</h1>
+<p>Ici nous detaillerons les differents code que nous avons developper pour la realisation du projet.</p>
+<h2 id="outils-utilises-avec-python">Outils utilises avec PYTHON</h2>
+<h3 id="utilisation-de-requests">Utilisation de Requests</h3>
+<pre><code>&gt;&gt;&gt;&gt; import requests
+
+&gt;&gt;&gt; url="..."
+
+&gt;&gt;&gt; r=requests.get(url)
+</code></pre>
+<p>Ces quelques ligne de code permettent de recuperer les donnes d'une page web.
+Il suffit de remplacer le trou laisser dans la variable URL pour notifier la page web ou l'on souhaite recuperer les infos.</p>
+<pre><code>&gt;&gt;&gt; import requests
+
+&gt;&gt;&gt; url="https://www.wikipedia.org/"
+
+&gt;&gt;&gt; r=requests.get(url)
+
+&gt;&gt;&gt;print(r)
+</code></pre>
+<p>L'exemple au dessus permet de charger les informations de la page d'acceuil de WIKIPEDIA.</p>
+<h3 id="utilisation-dune-api">Utilisation d'une API</h3>
+<p>Pour notre projet nous avons besoin de recuperer des donnees sur la meteo a des endroits precis du globe,
+pour cela nous nous sommes tourner vers le site:  </p>
+<p>OPENWEATHERMAP.ORG  </p>
+<pre><code>&gt;http://api.openweathermap.org/data/2.5/forecast?id={ID}&amp;APPID={APIKEY}
+</code></pre>
+<p>La ligne de code precedente permet de recuperer les donnees meteorologique sur le site.</p>
+<h3 id="utilisation-du-format-json">Utilisation du format json</h3>
+<p>Les donnees sous le format JSON apparaissent sous la forme d'un dictionnaire.
+On sait qu'un dictionnaire marche grace a la combianaison d'un 'id' et d'une 'cle'.
+On peut donc extraire la donnee souhaite si l'on connait les 'liens' de ce dictionnaire.
+Voici un petit exemple qui montre comment marche un dictionnaire.</p>
+<pre><code>&gt;&gt;&gt;mon_dictionnaires={'mot de passe': '*', 'pseudo': '6pri1'}
+
+&gt;&gt;&gt;mon_dictionnaire['mot de passe']
+
+&gt;&gt;&gt;'*'
+
+&gt;&gt;&gt;mon_dictionnaire['pseudo']
+
+&gt;&gt;&gt;'6pri1'
+</code></pre>
+<p>Devant la simplicite d'utilisation du format JSON nous avons decide d'incorporer dans notre code la fonction JSON
+qui permettra de crer une arborescence plus simple des donnees et qui nous facilitera l'acces a celle-ci.</p>
+<p>Le code va de nouveau se modifier pour devenir:</p>
+<pre><code>&gt;&gt;&gt;&gt; import requests
+
+&gt;&gt;&gt;import json
+
+&gt;&gt;&gt; url="http://api.openweathermap.org/data/2.5/forecast?id={ID}&amp;appid={APIKEY}"
+
+&gt;&gt;&gt; r=requests.get(url)
+
+&gt;&gt;&gt;data=r.json()
+</code></pre>
+<h2 id="algorithme-de-recuperation-des-donnees-meteorologiques">Algorithme de recuperation des donnees meteorologiques</h2>
+<h3 id="recuperation-de-la-temperature-et-de-la-description-du-temps">Recuperation de la temperature et de la description du temps</h3>
+<p>Dans un fichier texte sur le site OPENWEATHERMAP il est possible de conaitre l'arborescence des differents dictionnaires
+Nous avons donc pu deduire les 2 prochaines lignes de code:</p>
+<pre><code>&gt;&gt;&gt;temp0=int(data['list'][0]['main']['temp']-273)  (donne la temperature)
+
+&gt;&gt;&gt;desc0=data['list'][0]['weather'][0]['description'] (donne la description du temp)
+</code></pre>
+<h3 id="comment-avoir-les-donnees-de-la-ville-de-lille">Comment avoir les donnees de la ville de LILLE</h3>
+<p>Maintenant que nous savons comment recuperer les differentes donnees il faut que l'on trouve un moyen pour n'obtenir que les donnees pour la ville de lille.
+Reprenons l'url qui nous permet d'acceder aux donnees:</p>
+<pre><code>&gt;&gt;&gt;http://api.openweathermap.org/data/2.5/forecast?id={ID}&amp;appid={APIKEY}
+</code></pre>
+<p>On remarque que deux donnees sont a rentrer,nous avons deja aborder la premiere qui est APIKEY.<br />
+La seconde represente un code rattacher a une ville.Le lien entre les villes et leur code est fournis par le site 
+OPENWEATHERMAP via un fichier texte qui regroupe toute les ville et leur ID. </p>
+<p>Apres quelque recherche Il s'avere que l'ID par laquel la ville de Lille est repertorier est : 2998323.  </p>
+<p>On obtient donc l'url finale :</p>
+<pre><code>&gt;http://api.openweathermap.org/data/2.5/forecast?id=2998323&amp;appid={APIKEY}
+</code></pre>
+<h2 id="developpement-en-micro-python">Developpement en MICRO-PYTHON</h2>
+<h3 id="connexion-a-internet">Connexion a internet</h3>
+<p>Pour reussir a connecter le microcontroleur a internet il a fallut inserer dans celui ci le code suivant:</p>
+<pre><code>&gt;&gt;&gt;def do_connect():
+&gt;import network
+&gt;sta_if = network.WLAN(network.STA_IF)
+&gt;if not sta_if.isconnected():
+&gt;print('connecting to network...')
+&gt;sta_if.active(True)
+&gt;sta_if.connect('id', 'mdp')
+&gt;while not sta_if.isconnected():
+&gt;pass
+&gt;print('network config:', sta_if.ifconfig())
+&gt;do_connect()
+</code></pre>
+<p>A la 7 eme ligne il faut remplacer id par le nom du reseau et mdp par la cle de securite de ce reseau.</p>
+<h1 id="code">CODE</h1>
+<p>Voici le code en un seul bloc:</p>
+<pre><code>&gt;&gt;&gt;import requests
+&gt;&gt;&gt;import json
+&gt;&gt;&gt;#Http requests
+&gt;&gt;&gt;url="http://api.openweathermap.org/data/2.5/forecast?id=2998323&amp;appid={APIKEY}"
+&gt;&gt;&gt;r=requests.get(url)
+&gt;&gt;&gt;data=r.json()
+&gt;&gt;&gt;#Temperature et Descritpion
+&gt;&gt;&gt;temp0=int(data['list'][0]['main']['temp']-273)
+&gt;&gt;&gt;desc0=data['list'][0]['weather'][0]['description']
+&gt;&gt;&gt;temp1=int(data['list'][1]['main']['temp']-273)
+&gt;&gt;&gt;desc1=data['list'][1]['weather'][0]['description']
+</code></pre>
+<p>Il permet de recuperer les donnes meteorologiques immediate et les previsions pour 3 heures.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../habillage/" class="btn btn-neutral float-right" title="Habillage">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../le%20hardware/" class="btn btn-neutral" title="Le hardware"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../le%20hardware/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../habillage/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

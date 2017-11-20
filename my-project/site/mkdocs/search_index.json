@@ -1,0 +1,174 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Notre projet\n\n\nNous sommes 4 etudiants en Licence 3 d'Electronique Fondamentale. Nous participons dans le cadre de notre Cursus a un projet  qui consiste a se servir d'un microcontroleur (L'ESP 8266) pour realiser et concevoir un objet dit intelligent.Nous avons concu un objet connecte qui affiche la meteo et ceci a travers 3 etapes importante:  \n\n\nLa conception de la partie 'hardware'.\n\n\nDans cette partie nous nous sommes atteler a la conception de plusieurs circuits imprimes pour notre projet:  \n\n\n-Dans un premier temps nous detaillerons la conception d'un circuit support pour faciliter la connexion de l'Esp 8266 a un ordinateur.  \n\n\n-Puis nous parlerons de la realisation du circuit d'alimentation de notre projet.  \n\n\nLe codage de la partie 'software'.\n\n\nPour la realisaion du projet nous avons du apprendre a nous servir d'un nouveau language informatique: MICRO-PYTHON. C'est un language \ninformatique base sur PYTHON mais qui specialement adapte au codage de microcontroleur.\nAvant toute chose nous nous sommes interesser a la realisation d'un algorithme fonctionnel sur PYTHON.\n\nUne fois notre code au point sur PYTHON il devenait plus simple a transformer en MICROPYTHON.\n\nA travers ces differents code nous avons appris a nous servir d'une API et de la fonction 'request'.\n\nC'est pourquoi nous vous detaillerons en premier les algorithmes que nous avons realise sur PYTHON.\n\nEnsuite nous detaillerons les differents codes qui permettent au microcontroleur d'etre connecte a internet.\n\nNous conclurons sur les differences notables entre le code en PYTHON et en MICROPYTHON.   \n\n\nL'habillage du prototype.\n\n\nApres la conception des differentes partie electronique et informatique de notre projet il Fallait rendre\n notre projet esthetique.\n\nNous avons eu l'occasion d'utiliser une imprimante pour concevoir l'emballage de notre projet.\n\nNous detaillerons dans cette partie la realisation de la maquette grace au logiciel OPENSCAD puis nous exposerons notre projet finis.", 
+            "title": "Presentation du projet"
+        }, 
+        {
+            "location": "/#notre-projet", 
+            "text": "Nous sommes 4 etudiants en Licence 3 d'Electronique Fondamentale. Nous participons dans le cadre de notre Cursus a un projet  qui consiste a se servir d'un microcontroleur (L'ESP 8266) pour realiser et concevoir un objet dit intelligent.Nous avons concu un objet connecte qui affiche la meteo et ceci a travers 3 etapes importante:", 
+            "title": "Notre projet"
+        }, 
+        {
+            "location": "/#la-conception-de-la-partie-hardware", 
+            "text": "Dans cette partie nous nous sommes atteler a la conception de plusieurs circuits imprimes pour notre projet:    -Dans un premier temps nous detaillerons la conception d'un circuit support pour faciliter la connexion de l'Esp 8266 a un ordinateur.    -Puis nous parlerons de la realisation du circuit d'alimentation de notre projet.", 
+            "title": "La conception de la partie 'hardware'."
+        }, 
+        {
+            "location": "/#le-codage-de-la-partie-software", 
+            "text": "Pour la realisaion du projet nous avons du apprendre a nous servir d'un nouveau language informatique: MICRO-PYTHON. C'est un language \ninformatique base sur PYTHON mais qui specialement adapte au codage de microcontroleur.\nAvant toute chose nous nous sommes interesser a la realisation d'un algorithme fonctionnel sur PYTHON. \nUne fois notre code au point sur PYTHON il devenait plus simple a transformer en MICROPYTHON. \nA travers ces differents code nous avons appris a nous servir d'une API et de la fonction 'request'. \nC'est pourquoi nous vous detaillerons en premier les algorithmes que nous avons realise sur PYTHON. \nEnsuite nous detaillerons les differents codes qui permettent au microcontroleur d'etre connecte a internet. \nNous conclurons sur les differences notables entre le code en PYTHON et en MICROPYTHON.", 
+            "title": "Le codage de la partie 'software'."
+        }, 
+        {
+            "location": "/#lhabillage-du-prototype", 
+            "text": "Apres la conception des differentes partie electronique et informatique de notre projet il Fallait rendre\n notre projet esthetique. \nNous avons eu l'occasion d'utiliser une imprimante pour concevoir l'emballage de notre projet. \nNous detaillerons dans cette partie la realisation de la maquette grace au logiciel OPENSCAD puis nous exposerons notre projet finis.", 
+            "title": "L'habillage du prototype."
+        }, 
+        {
+            "location": "/le hardware/", 
+            "text": "LE MATERIEL\n\n\nCette partie reprend donc la realisation ainsi que la conception des differents circuits du projet.Pour cela nous introduirons d'abord le logiciel que nous avons utilise pour concevoir les differents circuits puis nous detaillerons les 2 circuits principale de notre projet.\n\n\nRappel pour l'utilisation de EAGLE.\n\n\nVoici un petit tutoriel pour utiliser EAGLE-Autodesk.Eagle etant un FREECIEL en anglais. \n\n\nEtape 1\n\n\nOn telecharge le logiciel grace au lien suivant:\n\n\nhttps://www.autodesk.com/products/eagle/free-download\n\n\n\nEtape 2\n\n\nOn cree un nouveau projet qui servira a enregistrer les differents schemas et composants: \n\n\n File-\n new project\n\n\n\nEnsuite on va cree une librairie qui regroupera les differentes structures pour les nouveau composants que nous allons crees pour notre projets.\n\n\n new library\n\n\n\nEtape 3\n\n\nDans cette etape nous allons participer a la creation des differents composants car malgres le faite que la bibliotheque de EAGLE soit dense on ne trouvera pas toujours les composants que nous utiliserons reelement.\n\n\nPremierement nous allons creer un 'package' qui permet la creations des pins a implementer sur le circuit imprime.\n\n\n File -\n New Package.\n\n\n\nUne fois le nouveau package creer on double clique dessus et on se retrouve sur un page avec 4 onglets disponible:  \n\n\n-Device  \n\n\n-Package  \n\n\n-3D Package  \n\n\n-Symbol \n\n\nEn bas de ces onglets on clique sur 'ADD ...'.  \n\n\nADD PACKAGE.\n\n\nDans cette partie on va chercher a creer les 'Trous' qui seront sur le circuit imprime. \n\n\n Icone : ADD pins.\n\n Les pins carre sont utilise pour l'entree de la tension.\n\n Les pins rond pour les differentes sorties du composant.\n\n Pour simplifier les etapes suivantes donner des noms marquants a ces sorties.\n\n Sauvegarder\n\n\n\nADD SYMBOL.\n\n\nDans cette partie nous allons creer les symboles qui serviront a placer les composants sur le circuit. \n\n\nDessiner la forme du composants.\n\nAjouter les differentes pattes.\n\nChanger les noms des pattes de manieres a se reperer.\n\nSauvegarder.\n\n\n\nADD DEVICE.\n\n\nDans cette partie nous allons combiner et connecter les symboles a leur packages.\n\n\n On va chercher d'un cote le symbole creer pour le composant et de l'autre le packages.\n\n On clique sur le bouton connect.\n\n SI l'on a choisis des noms parlants on va pouvoir lier simplement les pattes aux 'trous'.\n\n Sauvegarder.\n\n\n\nEtape 4\n\n\nSupport pour L'ESP.\n\n\nPour connecter notre projet a un ordinateur et pour pouvoir connecter l'ecran oled plus simplement.\n\n\nAlimentation.\n\n\nNous voulions alimenter notre projet avec une cellule photovoltaique. Le probleme qui c'est poser a nous a ete le choix de la cellule photovoltaique\nnous avions a notre disposition une cellule de 5 Volts et une cellule de 10 Volts, hors notre microcontrolleur requiert 3.3 Volt en entree. Pour contrer ce probleme nous avons\nintroduits un regulateur de tension.\nPour le bon fonctionnement du regulateur nous avons du ajouter des capacites pour eviter les discontinuite de tension aux bornes du regulateur.", 
+            "title": "Le hardware"
+        }, 
+        {
+            "location": "/le hardware/#le-materiel", 
+            "text": "Cette partie reprend donc la realisation ainsi que la conception des differents circuits du projet.Pour cela nous introduirons d'abord le logiciel que nous avons utilise pour concevoir les differents circuits puis nous detaillerons les 2 circuits principale de notre projet.", 
+            "title": "LE MATERIEL"
+        }, 
+        {
+            "location": "/le hardware/#rappel-pour-lutilisation-de-eagle", 
+            "text": "Voici un petit tutoriel pour utiliser EAGLE-Autodesk.Eagle etant un FREECIEL en anglais.", 
+            "title": "Rappel pour l'utilisation de EAGLE."
+        }, 
+        {
+            "location": "/le hardware/#etape-1", 
+            "text": "On telecharge le logiciel grace au lien suivant:  https://www.autodesk.com/products/eagle/free-download", 
+            "title": "Etape 1"
+        }, 
+        {
+            "location": "/le hardware/#etape-2", 
+            "text": "On cree un nouveau projet qui servira a enregistrer les differents schemas et composants:    File-  new project  Ensuite on va cree une librairie qui regroupera les differentes structures pour les nouveau composants que nous allons crees pour notre projets.   new library", 
+            "title": "Etape 2"
+        }, 
+        {
+            "location": "/le hardware/#etape-3", 
+            "text": "Dans cette etape nous allons participer a la creation des differents composants car malgres le faite que la bibliotheque de EAGLE soit dense on ne trouvera pas toujours les composants que nous utiliserons reelement.  Premierement nous allons creer un 'package' qui permet la creations des pins a implementer sur le circuit imprime.   File -  New Package.  Une fois le nouveau package creer on double clique dessus et on se retrouve sur un page avec 4 onglets disponible:    -Device    -Package    -3D Package    -Symbol   En bas de ces onglets on clique sur 'ADD ...'.", 
+            "title": "Etape 3"
+        }, 
+        {
+            "location": "/le hardware/#add-package", 
+            "text": "Dans cette partie on va chercher a creer les 'Trous' qui seront sur le circuit imprime.    Icone : ADD pins.  Les pins carre sont utilise pour l'entree de la tension.  Les pins rond pour les differentes sorties du composant.  Pour simplifier les etapes suivantes donner des noms marquants a ces sorties.  Sauvegarder", 
+            "title": "ADD PACKAGE."
+        }, 
+        {
+            "location": "/le hardware/#add-symbol", 
+            "text": "Dans cette partie nous allons creer les symboles qui serviront a placer les composants sur le circuit.   Dessiner la forme du composants. Ajouter les differentes pattes. Changer les noms des pattes de manieres a se reperer. Sauvegarder.", 
+            "title": "ADD SYMBOL."
+        }, 
+        {
+            "location": "/le hardware/#add-device", 
+            "text": "Dans cette partie nous allons combiner et connecter les symboles a leur packages.   On va chercher d'un cote le symbole creer pour le composant et de l'autre le packages.  On clique sur le bouton connect.  SI l'on a choisis des noms parlants on va pouvoir lier simplement les pattes aux 'trous'.  Sauvegarder.", 
+            "title": "ADD DEVICE."
+        }, 
+        {
+            "location": "/le hardware/#etape-4", 
+            "text": "", 
+            "title": "Etape 4"
+        }, 
+        {
+            "location": "/le hardware/#support-pour-lesp", 
+            "text": "Pour connecter notre projet a un ordinateur et pour pouvoir connecter l'ecran oled plus simplement.", 
+            "title": "Support pour L'ESP."
+        }, 
+        {
+            "location": "/le hardware/#alimentation", 
+            "text": "Nous voulions alimenter notre projet avec une cellule photovoltaique. Le probleme qui c'est poser a nous a ete le choix de la cellule photovoltaique\nnous avions a notre disposition une cellule de 5 Volts et une cellule de 10 Volts, hors notre microcontrolleur requiert 3.3 Volt en entree. Pour contrer ce probleme nous avons\nintroduits un regulateur de tension.\nPour le bon fonctionnement du regulateur nous avons du ajouter des capacites pour eviter les discontinuite de tension aux bornes du regulateur.", 
+            "title": "Alimentation."
+        }, 
+        {
+            "location": "/le software/", 
+            "text": "LE SOFTWARE\n\n\nIci nous detaillerons les differents code que nous avons developper pour la realisation du projet.\n\n\nOutils utilises avec PYTHON\n\n\nUtilisation de Requests\n\n\n import requests\n\n\n url=\"...\"\n\n\n r=requests.get(url)\n\n\n\nCes quelques ligne de code permettent de recuperer les donnes d'une page web.\nIl suffit de remplacer le trou laisser dans la variable URL pour notifier la page web ou l'on souhaite recuperer les infos.\n\n\n import requests\n\n\n url=\"https://www.wikipedia.org/\"\n\n\n r=requests.get(url)\n\n\nprint(r)\n\n\n\nL'exemple au dessus permet de charger les informations de la page d'acceuil de WIKIPEDIA.\n\n\nUtilisation d'une API\n\n\nPour notre projet nous avons besoin de recuperer des donnees sur la meteo a des endroits precis du globe,\npour cela nous nous sommes tourner vers le site:  \n\n\nOPENWEATHERMAP.ORG  \n\n\nhttp://api.openweathermap.org/data/2.5/forecast?id={ID}\nAPPID={APIKEY}\n\n\n\nLa ligne de code precedente permet de recuperer les donnees meteorologique sur le site.\n\n\nUtilisation du format json\n\n\nLes donnees sous le format JSON apparaissent sous la forme d'un dictionnaire.\nOn sait qu'un dictionnaire marche grace a la combianaison d'un 'id' et d'une 'cle'.\nOn peut donc extraire la donnee souhaite si l'on connait les 'liens' de ce dictionnaire.\nVoici un petit exemple qui montre comment marche un dictionnaire.\n\n\nmon_dictionnaires={'mot de passe': '*', 'pseudo': '6pri1'}\n\n\nmon_dictionnaire['mot de passe']\n\n\n'*'\n\n\nmon_dictionnaire['pseudo']\n\n\n'6pri1'\n\n\n\nDevant la simplicite d'utilisation du format JSON nous avons decide d'incorporer dans notre code la fonction JSON\nqui permettra de crer une arborescence plus simple des donnees et qui nous facilitera l'acces a celle-ci.\n\n\nLe code va de nouveau se modifier pour devenir:\n\n\n import requests\n\n\nimport json\n\n\n url=\"http://api.openweathermap.org/data/2.5/forecast?id={ID}\nappid={APIKEY}\"\n\n\n r=requests.get(url)\n\n\ndata=r.json()\n\n\n\nAlgorithme de recuperation des donnees meteorologiques\n\n\nRecuperation de la temperature et de la description du temps\n\n\nDans un fichier texte sur le site OPENWEATHERMAP il est possible de conaitre l'arborescence des differents dictionnaires\nNous avons donc pu deduire les 2 prochaines lignes de code:\n\n\ntemp0=int(data['list'][0]['main']['temp']-273)  (donne la temperature)\n\n\ndesc0=data['list'][0]['weather'][0]['description'] (donne la description du temp)\n\n\n\nComment avoir les donnees de la ville de LILLE\n\n\nMaintenant que nous savons comment recuperer les differentes donnees il faut que l'on trouve un moyen pour n'obtenir que les donnees pour la ville de lille.\nReprenons l'url qui nous permet d'acceder aux donnees:\n\n\nhttp://api.openweathermap.org/data/2.5/forecast?id={ID}\nappid={APIKEY}\n\n\n\nOn remarque que deux donnees sont a rentrer,nous avons deja aborder la premiere qui est APIKEY.\n\nLa seconde represente un code rattacher a une ville.Le lien entre les villes et leur code est fournis par le site \nOPENWEATHERMAP via un fichier texte qui regroupe toute les ville et leur ID. \n\n\nApres quelque recherche Il s'avere que l'ID par laquel la ville de Lille est repertorier est : 2998323.  \n\n\nOn obtient donc l'url finale :\n\n\nhttp://api.openweathermap.org/data/2.5/forecast?id=2998323\nappid={APIKEY}\n\n\n\nDeveloppement en MICRO-PYTHON\n\n\nConnexion a internet\n\n\nPour reussir a connecter le microcontroleur a internet il a fallut inserer dans celui ci le code suivant:\n\n\ndef do_connect():\n\nimport network\n\nsta_if = network.WLAN(network.STA_IF)\n\nif not sta_if.isconnected():\n\nprint('connecting to network...')\n\nsta_if.active(True)\n\nsta_if.connect('id', 'mdp')\n\nwhile not sta_if.isconnected():\n\npass\n\nprint('network config:', sta_if.ifconfig())\n\ndo_connect()\n\n\n\nA la 7 eme ligne il faut remplacer id par le nom du reseau et mdp par la cle de securite de ce reseau.\n\n\nCODE\n\n\nVoici le code en un seul bloc:\n\n\nimport requests\n\nimport json\n\n#Http requests\n\nurl=\"http://api.openweathermap.org/data/2.5/forecast?id=2998323\nappid={APIKEY}\"\n\nr=requests.get(url)\n\ndata=r.json()\n\n#Temperature et Descritpion\n\ntemp0=int(data['list'][0]['main']['temp']-273)\n\ndesc0=data['list'][0]['weather'][0]['description']\n\ntemp1=int(data['list'][1]['main']['temp']-273)\n\ndesc1=data['list'][1]['weather'][0]['description']\n\n\n\nIl permet de recuperer les donnes meteorologiques immediate et les previsions pour 3 heures.", 
+            "title": "Le software"
+        }, 
+        {
+            "location": "/le software/#le-software", 
+            "text": "Ici nous detaillerons les differents code que nous avons developper pour la realisation du projet.", 
+            "title": "LE SOFTWARE"
+        }, 
+        {
+            "location": "/le software/#outils-utilises-avec-python", 
+            "text": "", 
+            "title": "Outils utilises avec PYTHON"
+        }, 
+        {
+            "location": "/le software/#utilisation-de-requests", 
+            "text": "import requests  url=\"...\"  r=requests.get(url)  Ces quelques ligne de code permettent de recuperer les donnes d'une page web.\nIl suffit de remplacer le trou laisser dans la variable URL pour notifier la page web ou l'on souhaite recuperer les infos.   import requests  url=\"https://www.wikipedia.org/\"  r=requests.get(url) print(r)  L'exemple au dessus permet de charger les informations de la page d'acceuil de WIKIPEDIA.", 
+            "title": "Utilisation de Requests"
+        }, 
+        {
+            "location": "/le software/#utilisation-dune-api", 
+            "text": "Pour notre projet nous avons besoin de recuperer des donnees sur la meteo a des endroits precis du globe,\npour cela nous nous sommes tourner vers le site:    OPENWEATHERMAP.ORG    http://api.openweathermap.org/data/2.5/forecast?id={ID} APPID={APIKEY}  La ligne de code precedente permet de recuperer les donnees meteorologique sur le site.", 
+            "title": "Utilisation d'une API"
+        }, 
+        {
+            "location": "/le software/#utilisation-du-format-json", 
+            "text": "Les donnees sous le format JSON apparaissent sous la forme d'un dictionnaire.\nOn sait qu'un dictionnaire marche grace a la combianaison d'un 'id' et d'une 'cle'.\nOn peut donc extraire la donnee souhaite si l'on connait les 'liens' de ce dictionnaire.\nVoici un petit exemple qui montre comment marche un dictionnaire.  mon_dictionnaires={'mot de passe': '*', 'pseudo': '6pri1'} mon_dictionnaire['mot de passe'] '*' mon_dictionnaire['pseudo'] '6pri1'  Devant la simplicite d'utilisation du format JSON nous avons decide d'incorporer dans notre code la fonction JSON\nqui permettra de crer une arborescence plus simple des donnees et qui nous facilitera l'acces a celle-ci.  Le code va de nouveau se modifier pour devenir:   import requests import json  url=\"http://api.openweathermap.org/data/2.5/forecast?id={ID} appid={APIKEY}\"  r=requests.get(url) data=r.json()", 
+            "title": "Utilisation du format json"
+        }, 
+        {
+            "location": "/le software/#algorithme-de-recuperation-des-donnees-meteorologiques", 
+            "text": "", 
+            "title": "Algorithme de recuperation des donnees meteorologiques"
+        }, 
+        {
+            "location": "/le software/#recuperation-de-la-temperature-et-de-la-description-du-temps", 
+            "text": "Dans un fichier texte sur le site OPENWEATHERMAP il est possible de conaitre l'arborescence des differents dictionnaires\nNous avons donc pu deduire les 2 prochaines lignes de code:  temp0=int(data['list'][0]['main']['temp']-273)  (donne la temperature) desc0=data['list'][0]['weather'][0]['description'] (donne la description du temp)", 
+            "title": "Recuperation de la temperature et de la description du temps"
+        }, 
+        {
+            "location": "/le software/#comment-avoir-les-donnees-de-la-ville-de-lille", 
+            "text": "Maintenant que nous savons comment recuperer les differentes donnees il faut que l'on trouve un moyen pour n'obtenir que les donnees pour la ville de lille.\nReprenons l'url qui nous permet d'acceder aux donnees:  http://api.openweathermap.org/data/2.5/forecast?id={ID} appid={APIKEY}  On remarque que deux donnees sont a rentrer,nous avons deja aborder la premiere qui est APIKEY. \nLa seconde represente un code rattacher a une ville.Le lien entre les villes et leur code est fournis par le site \nOPENWEATHERMAP via un fichier texte qui regroupe toute les ville et leur ID.   Apres quelque recherche Il s'avere que l'ID par laquel la ville de Lille est repertorier est : 2998323.    On obtient donc l'url finale :  http://api.openweathermap.org/data/2.5/forecast?id=2998323 appid={APIKEY}", 
+            "title": "Comment avoir les donnees de la ville de LILLE"
+        }, 
+        {
+            "location": "/le software/#developpement-en-micro-python", 
+            "text": "", 
+            "title": "Developpement en MICRO-PYTHON"
+        }, 
+        {
+            "location": "/le software/#connexion-a-internet", 
+            "text": "Pour reussir a connecter le microcontroleur a internet il a fallut inserer dans celui ci le code suivant:  def do_connect(): import network sta_if = network.WLAN(network.STA_IF) if not sta_if.isconnected(): print('connecting to network...') sta_if.active(True) sta_if.connect('id', 'mdp') while not sta_if.isconnected(): pass print('network config:', sta_if.ifconfig()) do_connect()  A la 7 eme ligne il faut remplacer id par le nom du reseau et mdp par la cle de securite de ce reseau.", 
+            "title": "Connexion a internet"
+        }, 
+        {
+            "location": "/le software/#code", 
+            "text": "Voici le code en un seul bloc:  import requests import json #Http requests url=\"http://api.openweathermap.org/data/2.5/forecast?id=2998323 appid={APIKEY}\" r=requests.get(url) data=r.json() #Temperature et Descritpion temp0=int(data['list'][0]['main']['temp']-273) desc0=data['list'][0]['weather'][0]['description'] temp1=int(data['list'][1]['main']['temp']-273) desc1=data['list'][1]['weather'][0]['description']  Il permet de recuperer les donnes meteorologiques immediate et les previsions pour 3 heures.", 
+            "title": "CODE"
+        }, 
+        {
+            "location": "/habillage/", 
+            "text": "HABILLAGE\n\n\nDans cette derniere partie nous avons chercher a embellir notre projet comme si nous etions amener a le vendre.\n\nNous avions a disposition une imprimante 3D ainsi que le logiciel de creation de forme OPENSCAD.\n\n\nOPENSCAD\n\n\nVoici le lien du logiciel :\n\n\n http://www.openscad.org/\n\n\n\nCe logiciel s'appuie sur des directives que l'on doit coder.Veillez trouver ici un lien qui nous a permis \n de concevoir les differents algorithmes pour creer un emballage  pour notre projet.\n\n\n http://www.openscad.org/cheatsheet/index.html\n\n\n\nUtilisation de l'imprimante 3D.\n\n\nDiscussion autour de la forme choisi", 
+            "title": "Habillage"
+        }, 
+        {
+            "location": "/habillage/#habillage", 
+            "text": "Dans cette derniere partie nous avons chercher a embellir notre projet comme si nous etions amener a le vendre. \nNous avions a disposition une imprimante 3D ainsi que le logiciel de creation de forme OPENSCAD.", 
+            "title": "HABILLAGE"
+        }, 
+        {
+            "location": "/habillage/#openscad", 
+            "text": "Voici le lien du logiciel :   http://www.openscad.org/  Ce logiciel s'appuie sur des directives que l'on doit coder.Veillez trouver ici un lien qui nous a permis \n de concevoir les differents algorithmes pour creer un emballage  pour notre projet.   http://www.openscad.org/cheatsheet/index.html", 
+            "title": "OPENSCAD"
+        }, 
+        {
+            "location": "/habillage/#utilisation-de-limprimante-3d", 
+            "text": "", 
+            "title": "Utilisation de l'imprimante 3D."
+        }, 
+        {
+            "location": "/habillage/#discussion-autour-de-la-forme-choisi", 
+            "text": "", 
+            "title": "Discussion autour de la forme choisi"
+        }
+    ]
+}

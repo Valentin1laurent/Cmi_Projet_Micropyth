@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <title>Presentation du projet - Affichage meteo</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Presentation du projet";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Affichage meteo</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">Presentation du projet</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#notre-projet">Notre projet</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#la-conception-de-la-partie-hardware">La conception de la partie 'hardware'.</a></li>
+        
+            <li><a class="toctree-l3" href="#le-codage-de-la-partie-software">Le codage de la partie 'software'.</a></li>
+        
+            <li><a class="toctree-l3" href="#lhabillage-du-prototype">L'habillage du prototype.</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="le hardware/">Le hardware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="le software/">Le software</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="habillage/">Habillage</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Affichage meteo</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Presentation du projet</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="notre-projet">Notre projet</h1>
+<p>Nous sommes 4 etudiants en Licence 3 d'Electronique Fondamentale. Nous participons dans le cadre de notre Cursus a un projet  qui consiste a se servir d'un microcontroleur (L'ESP 8266) pour realiser et concevoir un objet dit intelligent.Nous avons concu un objet connecte qui affiche la meteo et ceci a travers 3 etapes importante:  </p>
+<h2 id="la-conception-de-la-partie-hardware">La conception de la partie 'hardware'.</h2>
+<p>Dans cette partie nous nous sommes atteler a la conception de plusieurs circuits imprimes pour notre projet:  </p>
+<p>-Dans un premier temps nous detaillerons la conception d'un circuit support pour faciliter la connexion de l'Esp 8266 a un ordinateur.  </p>
+<p>-Puis nous parlerons de la realisation du circuit d'alimentation de notre projet.  </p>
+<h2 id="le-codage-de-la-partie-software">Le codage de la partie 'software'.</h2>
+<p>Pour la realisaion du projet nous avons du apprendre a nous servir d'un nouveau language informatique: MICRO-PYTHON. C'est un language 
+informatique base sur PYTHON mais qui specialement adapte au codage de microcontroleur.
+Avant toute chose nous nous sommes interesser a la realisation d'un algorithme fonctionnel sur PYTHON.<br />
+Une fois notre code au point sur PYTHON il devenait plus simple a transformer en MICROPYTHON.<br />
+A travers ces differents code nous avons appris a nous servir d'une API et de la fonction 'request'.<br />
+C'est pourquoi nous vous detaillerons en premier les algorithmes que nous avons realise sur PYTHON.<br />
+Ensuite nous detaillerons les differents codes qui permettent au microcontroleur d'etre connecte a internet.<br />
+Nous conclurons sur les differences notables entre le code en PYTHON et en MICROPYTHON.   </p>
+<h2 id="lhabillage-du-prototype">L'habillage du prototype.</h2>
+<p>Apres la conception des differentes partie electronique et informatique de notre projet il Fallait rendre
+ notre projet esthetique.<br />
+Nous avons eu l'occasion d'utiliser une imprimante pour concevoir l'emballage de notre projet.<br />
+Nous detaillerons dans cette partie la realisation de la maquette grace au logiciel OPENSCAD puis nous exposerons notre projet finis.  </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="le hardware/" class="btn btn-neutral float-right" title="Le hardware">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="le hardware/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="./js/theme.js"></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.16.3
+Build Date UTC : 2017-11-20 13:33:53
+-->
