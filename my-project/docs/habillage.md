@@ -24,6 +24,10 @@ De plus il est facile d'utilisation.
 
 	> https://www.tinkercad.com 
 
+Tinkercad propose des formes de base que l'on peux etirer,vider modifier l'angle par rapport au differents plan de 
+l'objet.
+Son utilisation est tres simple et il nous a permis de concevoir une boite d'emballage assez simplement.
+
 
 
 ##Utilisation de l'imprimante 3D.
@@ -45,6 +49,7 @@ Nous avons inserer la carte SD dans l'imprimante 3D, regler les parametres de ce
 ###Etape 4
 Nous avons lancer l'impression de notre modele.  
 
+Vous trouverez dans le document Github un dossier nomme
 
 
 

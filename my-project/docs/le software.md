@@ -1,4 +1,4 @@
-#LE SOFTWARE
+#Codage et informatique lie au projet
 
 Ici nous detaillerons les differents code que nous avons developper pour la realisation du projet.
 
@@ -101,29 +101,18 @@ On obtient donc l'url finale :
 	
 	>http://api.openweathermap.org/data/2.5/forecast?id=2998323&appid={APIKEY}
 
-##Developpement en MICRO-PYTHON
-
-
-###Connexion a internet
-Pour reussir a connecter le microcontroleur a internet il a fallut inserer dans celui ci le code suivant:
-
-	>>>def do_connect():
-	>import network
-	>sta_if = network.WLAN(network.STA_IF)
-	>if not sta_if.isconnected():
-	>print('connecting to network...')
-	>sta_if.active(True)
-	>sta_if.connect('id', 'mdp')
-	>while not sta_if.isconnected():
-	>pass
-	>print('network config:', sta_if.ifconfig())
-	>do_connect() 
-
-A la 7 eme ligne il faut remplacer id par le nom du reseau et mdp par la cle de securite de ce reseau.
 
 
 
 
+
+
+## Comment 'flasher' l'ESP8266 pour installer micropython
+
+
+##Utilisation de micropython
+
+## En cas de probleme
 
 
 

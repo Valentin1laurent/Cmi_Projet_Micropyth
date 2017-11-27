@@ -15,14 +15,14 @@ Pour la realisaion du projet nous avons du apprendre a nous servir d'un nouveau 
 informatique base sur PYTHON mais qui specialement adapte au codage de microcontroleur.
 Avant toute chose nous nous sommes interesser a la realisation d'un algorithme fonctionnel sur PYTHON.  
 Une fois notre code au point sur PYTHON il devenait plus simple a transformer en MICROPYTHON.  
-A travers ces differents code nous avons appris a nous servir d'une API et de la fonction 'request'.  
+A travers ces differents code nous avons appris a nous servir d'une API(Application Programming Interface) et de la fonction 'request'.  
 C'est pourquoi nous vous detaillerons en premier les algorithmes que nous avons realise sur PYTHON.  
 Ensuite nous detaillerons les differents codes qui permettent au microcontroleur d'etre connecte a internet.  
 Nous conclurons sur les differences notables entre le code en PYTHON et en MICROPYTHON.   
 
 ## L'habillage du prototype.
 
-Apres la conception des differentes partie electronique et informatique de notre projet il Fallait rendre
+Apres la conception des differentes partie electronique et informatique de notre projet il fallait rendre
  notre projet esthetique.  
-Nous avons eu l'occasion d'utiliser une imprimante pour concevoir l'emballage de notre projet.  
-Nous detaillerons dans cette partie la realisation de la maquette grace au logiciel OPENSCAD puis nous exposerons notre projet finis.  
+Nous avons eu l'occasion d'utiliser une imprimante3D pour concevoir l'emballage de notre projet. 
+Nous detaillerons ici les etapes de conception de l'emballage par l'imprimante 3D.

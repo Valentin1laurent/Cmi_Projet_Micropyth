@@ -1,4 +1,4 @@
-# LE MATERIEL
+# Conception et realisation des composantes electronique du projet
 
 
 Cette partie reprend donc la realisation ainsi que la conception des differents circuits du projet.Pour cela nous introduirons d'abord le logiciel que nous avons utilise pour concevoir les differents circuits puis nous detaillerons les 2 circuits principale de notre projet.
@@ -69,19 +69,34 @@ Dans cette partie nous allons combiner et connecter les symboles a leur packages
 	> SI l'on a choisis des noms parlants on va pouvoir lier simplement les pattes aux 'trous'.
 	> Sauvegarder.
 
-###Etape 4
-##Support pour L'ESP.
 
-Pour connecter notre projet a un ordinateur et pour pouvoir connecter l'ecran oled plus simplement.
+##Support  de connexion pour L'ESP.
 
+Pour connecter notre projet a un ordinateur nous avons du connecter le microcontrolleur a un circuit imprimer realiser par nos soins. Cette connexion s'effectue par le biais d'un cable FTDI.
+Il fallait veiller a ce que chaque partie se connecte au bonne endroit pour eviter tous risque de court circuit.
+Nous avons donc du respecter le schema de connexion ci dessous:
 
+	> Le RX du FTDI au TX de l'ESP8266
+	> Le TX du FTDI au RX de l'ESP8266
+	>Le GND du FTDI au GND de l'ESP8266
+	>Le VCC du FTDI au VCC de l'ESP8266
 
+Ensuite pour permettre l'affichage des donnees en reel nous avons connecter un ecran OLED sur le meme circuit imprimer.
+Il a de nouveau fallu verifier les connectique pour qu'elle respecte le schema suivant:
 
+	> Le SDA du SSD1306 au GPIO0 de l'ESP8266
+	> Le SCK du SSD1306 au GPIO2 de l'ESP8266
+	> Le GND du SSD1306 au GND de l'ESP8266
+	> Le VCC du SSD1306 au 3.3V de l'ESP8266
 
-## Alimentation.
+##Circuit pour le projet final.
 
-Nous voulions alimenter notre projet avec une cellule photovoltaique. Le probleme qui c'est poser a nous a ete le choix de la cellule photovoltaique
-nous avions a notre disposition une cellule de 5 Volts et une cellule de 10 Volts, hors notre microcontrolleur requiert 3.3 Volt en entree. Pour contrer ce probleme nous avons
-introduits un regulateur de tension.
-Pour le bon fonctionnement du regulateur nous avons du ajouter des capacites pour eviter les discontinuite de tension aux bornes du regulateur.
-
+Dans le cadre de notre projet nous devions rendre cette objet connecte.Il fallait aussi trouver un moyen de lire les donnees recuperer et de pouvoir alimenter le tous 
+sans avoir besoin d'etre constamment brancher a un ordinateur.
+Il fallait subvenir au besoin electrique de l'ESP 8266 et de l'ecran oled.
+Nous avons donc concu un circuit imprimer capable d'alimenter tous ces composants.
+L'utilisation d'un panneau solaire nous paraissait etre la plus adapter pour repondre au besoin du projet mais pour fournir le courant minimal necessaire a l'alimentation du projet
+il fallait mettre un panneau delivrant une grande tension. Il est apparu un risque pour les composants. Nous
+avons donc appris comment contourner ce problemes en utilisant un regulateur de tension.
+ 
+	
