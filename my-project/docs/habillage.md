@@ -28,6 +28,24 @@ De plus il est facile d'utilisation.
 
 ##Utilisation de l'imprimante 3D.
 
+Dans le but de realiser notre modele en objet reel, nous avons du apprendre a nous servir d'une imprimante 3D,qui
+permet de fabriquer des pieces en volumes. Nous avons du suivre les etapes suivantes:
+
+###Etape 1
+Apres avoir realiser notre 'forme' voulue sur tinkercad nous avons telecharger le fichier.C'est un format special qui
+ne concerne que les imprimantes 3D le STL.
+
+###Etape 2
+Nous avons ouvert ce fichier avec un autre logiciel qui lui est specialise dans le decoupage et le reglage de tous les parametres
+propre a l'impirmante 3D : CURA. Ce dernier permet de verifier les proprietes de notre modele mais aussi d'ejecter le fichier dans la carte SD.
+
+###Etape 3 
+Nous avons inserer la carte SD dans l'imprimante 3D, regler les parametres de cette derniere et verifier son bon fonctionnement.
+
+###Etape 4
+Nous avons lancer l'impression de notre modele.  
+
+
 
 
 
