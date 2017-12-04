@@ -3,7 +3,7 @@
 Ici nous detaillerons les differents code que nous avons developper pour la realisation du projet.
 
 
-##Outils utilises avec PYTHON
+##Librairies utilises avec PYTHON
 
 ###Utilisation de Requests
 
