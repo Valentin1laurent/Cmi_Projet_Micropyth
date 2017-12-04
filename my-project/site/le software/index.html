@@ -62,7 +62,7 @@
     <a class="current" href="./">Le software</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#le-software">LE SOFTWARE</a></li>
+    <li class="toctree-l2"><a href="#codage-et-informatique-lie-au-projet">Codage et informatique lie au projet</a></li>
     
         <ul>
         
@@ -70,12 +70,17 @@
         
             <li><a class="toctree-l3" href="#algorithme-de-recuperation-des-donnees-meteorologiques">Algorithme de recuperation des donnees meteorologiques</a></li>
         
-            <li><a class="toctree-l3" href="#developpement-en-micro-python">Developpement en MICRO-PYTHON</a></li>
+            <li><a class="toctree-l3" href="#utilisation-de-micropython">Utilisation de micropython</a></li>
+        
+            <li><a class="toctree-l3" href="#comment-flasher-lesp8266-et-installer-micropython">Comment 'flasher' l'ESP8266 et installer micropython</a></li>
         
         </ul>
     
 
-    <li class="toctree-l2"><a href="#code">CODE</a></li>
+    <li class="toctree-l2"><a href="#code-python">CODE PYTHON</a></li>
+    
+
+    <li class="toctree-l2"><a href="#code-micropython">CODE MICROPYTHON</a></li>
     
 
     </ul>
@@ -118,7 +123,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="le-software">LE SOFTWARE</h1>
+                <h1 id="codage-et-informatique-lie-au-projet">Codage et informatique lie au projet</h1>
 <p>Ici nous detaillerons les differents code que nous avons developper pour la realisation du projet.</p>
 <h2 id="outils-utilises-avec-python">Outils utilises avec PYTHON</h2>
 <h3 id="utilisation-de-requests">Utilisation de Requests</h3>
@@ -176,7 +181,7 @@ qui permettra de crer une arborescence plus simple des donnees et qui nous facil
 </code></pre>
 <h2 id="algorithme-de-recuperation-des-donnees-meteorologiques">Algorithme de recuperation des donnees meteorologiques</h2>
 <h3 id="recuperation-de-la-temperature-et-de-la-description-du-temps">Recuperation de la temperature et de la description du temps</h3>
-<p>Dans un fichier texte sur le site OPENWEATHERMAP il est possible de conaitre l'arborescence des differents dictionnaires
+<p>Dans un fichier texte sur le site OPENWEATHERMAP il est possible de connaitre l'arborescence des differents dictionnaires
 Nous avons donc pu deduire les 2 prochaines lignes de code:</p>
 <pre><code>&gt;&gt;&gt;temp0=int(data['list'][0]['main']['temp']-273)  (donne la temperature)
 
@@ -192,26 +197,77 @@ La seconde represente un code rattacher a une ville.Le lien entre les villes et 
 OPENWEATHERMAP via un fichier texte qui regroupe toute les ville et leur ID. </p>
 <p>Apres quelque recherche Il s'avere que l'ID par laquel la ville de Lille est repertorier est : 2998323.  </p>
 <p>On obtient donc l'url finale :</p>
-<pre><code>&gt;http://api.openweathermap.org/data/2.5/forecast?id=2998323&amp;appid={APIKEY}
+<pre><code>&gt;&gt;&gt;&gt;http://api.openweathermap.org/data/2.5/forecast?id=2998323&amp;appid={APIKEY}
 </code></pre>
-<h2 id="developpement-en-micro-python">Developpement en MICRO-PYTHON</h2>
-<h3 id="connexion-a-internet">Connexion a internet</h3>
-<p>Pour reussir a connecter le microcontroleur a internet il a fallut inserer dans celui ci le code suivant:</p>
-<pre><code>&gt;&gt;&gt;def do_connect():
-&gt;import network
-&gt;sta_if = network.WLAN(network.STA_IF)
-&gt;if not sta_if.isconnected():
-&gt;print('connecting to network...')
-&gt;sta_if.active(True)
-&gt;sta_if.connect('id', 'mdp')
-&gt;while not sta_if.isconnected():
-&gt;pass
-&gt;print('network config:', sta_if.ifconfig())
-&gt;do_connect()
+<h2 id="utilisation-de-micropython">Utilisation de micropython</h2>
+<p>Pour coder sur le microcontroleur nous avons importer le langage 'Micropython'.C'est un langage simplifier de python:
+il ne contient pas toutes les librairies disponibles sur python mais il permet de retrouver quelque librairie de base et utilise pour 
+controler l'ESP.</p>
+<h2 id="comment-flasher-lesp8266-et-installer-micropython">Comment 'flasher' l'ESP8266 et installer micropython</h2>
+<p>Pour flasher le microcontroleur il faut mettre la borne GPIO0 a la masse.
+A partir de PIP il faut installer ESPTOOL.py
+EN tapant la commande: pip install esptool
+grace a esptool.py on peux effacer ce qui etait jusqu'a present sur l'esp en
+tapant la commande:</p>
+<pre><code>&gt;&gt;&gt;&gt;esptool.py --port /dev/ttyUSB0 erase_flash
 </code></pre>
-<p>A la 7 eme ligne il faut remplacer id par le nom du reseau et mdp par la cle de securite de ce reseau.</p>
-<h1 id="code">CODE</h1>
-<p>Voici le code en un seul bloc:</p>
+<p>Pour installer le nouveau firmware on tape la commande:</p>
+<pre><code>&gt;&gt;&gt;&gt;esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20170108-v1.8.7.bin
+</code></pre>
+<h3 id="librairies-utiles-a-notre-projet">Librairies utiles a notre projet</h3>
+<pre><code>&gt;&gt;&gt;&gt;import urequests
+&gt;&gt;&gt;&gt;import json
+&gt;&gt;&gt;&gt;import machine
+&gt;&gt;&gt;&gt;import ssd1306
+&gt;&gt;&gt;&gt;import network
+</code></pre>
+<p>-Urequest: elle possede le meme fonctionnement que la librairie request de python,c'est a dire
+qu'elle est utile lors de la recherche de l'API.</p>
+<p>-Json: il possede le meme fonctionnement qu'en python , c'est a dire qu'il va creer un dictionnaire de liste.</p>
+<p>-Machine:cette librairie servira dans la plupart des cas a connecter l'ecran avec la librairie propre
+a l'ecran SSD1306.</p>
+<p>-Network:cette librairie sera utiliser pour connecter l'esp par wi-fi a internet.</p>
+<h3 id="connectique-et-affichage">Connectique et affichage.</h3>
+<p>Dans un premier temps nous voulions recuperer les donnees meteorologique en ligne il etait essentiel de connecter l'esp a internet.
+Nous avons utiliser la librairie importer precedemment et nous avons obtenu le code suivant:</p>
+<pre><code>&gt;&gt;&gt;&gt;sta_if=network.WLAN(network.STA_IF)
+&gt;&gt;&gt;&gt;sta_if.active(True)
+&gt;&gt;&gt;&gt;sta_if.connect('&lt;username&gt;','&lt;password&gt;')
+</code></pre>
+<p>Ce code permet de connecter notre esp a un reseau sans fil.Pour cela il faut remplacer 
+la variable 'username' par le nom du reseau et la variable 'password' par le mot de passe du reseau. </p>
+<p>Dans un second temps pour pouvoir afficher les donnees issue d'internet sur un ecran il faut creer une variable 
+pour l'ecran et le configurer sur le microcontroleur:</p>
+<pre><code>&gt;&gt;&gt;&gt;i2c=machine.I2C(sc1=machine.pin(2), sda=machine.Pin(0))
+&gt;&gt;&gt;&gt;oled= ssd1306.SSD1306_I2C(128, 64, i2c)
+</code></pre>
+<h3 id="recuperation-des-donnees-en-micropython">Recuperation des donnees en micropython.</h3>
+<p>Les lignes de code suivantes permettent d'executer le meme programme qu'en python:
+C'est a dire qu'on va recuperer l'API donc l'URL du site et et mettre les differentes donnes en format json.</p>
+<pre><code>&gt;&gt;&gt;&gt;url="http://api.openweathermap.org/data/2.5/weather?id6454414&amp;APPID={APIKEY}
+&gt;&gt;&gt;&gt;r=urequest.get(url)
+&gt;&gt;&gt;&gt;data=r.json()
+&gt;&gt;&gt;&gt;ville=data["name"]
+&gt;&gt;&gt;&gt;degre=data["main"]["temp"]-273.15
+&gt;&gt;&gt;&gt;description=data["weather"][0]["description"]
+&gt;&gt;&gt;&gt;degree=str(int(degre))
+</code></pre>
+<p>Comme dans le code python on identifie les informations que l'on a besoin d'afficher a l'aide des proprietes d'un dictionnaire.
+On identifie donc le nom de la ville ,la temperature en degre et la decription du temps.</p>
+<h3 id="affichage-des-informations">Affichage des informations</h3>
+<p>Il ne nous reste plus qu'a afficher les informations precedemment obtenues sur l'ecran:</p>
+<pre><code>&gt;&gt;&gt;&gt;oled.fill(0)
+&gt;&gt;&gt;&gt;oled.show()
+&gt;&gt;&gt;&gt;oled.text('City: '+ville, 30, 10)
+&gt;&gt;&gt;&gt;oled.text('Temp: '+degree, 20, 30)
+&gt;&gt;&gt;&gt;oled.text(description, 10, 50)
+&gt;&gt;&gt;&gt;oled.show()
+</code></pre>
+<p>On commence par faire un 'clear'(on supprime les informations precedemment afficher au cas ou
+elle serait encore afficher) ensuite on ecrit ce que l'on veut a l'aide de la commande "text"
+et enfin on les affiches a l'aide de la fonction oled.show()</p>
+<h1 id="code-python">CODE PYTHON</h1>
+<p>Voici le code PYTHON en un seul bloc:</p>
 <pre><code>&gt;&gt;&gt;import requests
 &gt;&gt;&gt;import json
 &gt;&gt;&gt;#Http requests
@@ -225,6 +281,35 @@ OPENWEATHERMAP via un fichier texte qui regroupe toute les ville et leur ID. </p
 &gt;&gt;&gt;desc1=data['list'][1]['weather'][0]['description']
 </code></pre>
 <p>Il permet de recuperer les donnes meteorologiques immediate et les previsions pour 3 heures.</p>
+<h1 id="code-micropython">CODE MICROPYTHON</h1>
+<p>Voici le code MICROPYTHON en un seul bloc:</p>
+<pre><code>&gt;&gt;&gt;&gt;import urequests
+&gt;&gt;&gt;&gt;import json
+&gt;&gt;&gt;&gt;import machine
+&gt;&gt;&gt;&gt;import ssd1306
+&gt;&gt;&gt;&gt;import network
+&gt;&gt;&gt;&gt;sta_if=network.WLAN(network.STA_IF)
+&gt;&gt;&gt;&gt;sta_if.active(True)
+&gt;&gt;&gt;&gt;sta_if.connect('&lt;username&gt;','&lt;password&gt;')
+&gt;&gt;&gt;&gt;i2c=machine.I2C(sc1=machine.pin(2), sda=machine.Pin(0))
+&gt;&gt;&gt;&gt;oled= ssd1306.SSD1306_I2C(128, 64, i2c)
+&gt;&gt;&gt;&gt;url="http://api.openweathermap.org/data/2.5/weather?id6454414&amp;APPID={APIKEY}
+&gt;&gt;&gt;&gt;r=urequest.get(url)
+&gt;&gt;&gt;&gt;data=r.json()
+&gt;&gt;&gt;&gt;ville=data["name"]
+&gt;&gt;&gt;&gt;degre=data["main"]["temp"]-273.15
+&gt;&gt;&gt;&gt;description=data["weather"][0]["description"]
+&gt;&gt;&gt;&gt;degree=str(int(degre))
+&gt;&gt;&gt;&gt;oled.fill(0)
+&gt;&gt;&gt;&gt;oled.show()
+&gt;&gt;&gt;&gt;oled.text('City: '+ville, 30, 10)
+&gt;&gt;&gt;&gt;oled.text('Temp: '+degree, 20, 30)
+&gt;&gt;&gt;&gt;oled.text(description, 10, 50)
+&gt;&gt;&gt;&gt;oled.show()
+</code></pre>
+<p>Apres avoir flasher le microcontroleur avec le langage Micropython utiliser le code ci-dessus permettra de
+recuperer les donnees meteorologique sur le site internet OPENWEATHERMAP et de permettre avec l'utilisation
+d'un ecran SSD1306 d'afficher les informations tirees du site.  </p>
               
             </div>
           </div>

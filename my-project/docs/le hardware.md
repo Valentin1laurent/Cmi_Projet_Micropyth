@@ -78,8 +78,8 @@ Nous avons donc du respecter le schema de connexion ci dessous:
 
 	> Le RX du FTDI au TX de l'ESP8266
 	> Le TX du FTDI au RX de l'ESP8266
-	>Le GND du FTDI au GND de l'ESP8266
-	>Le VCC du FTDI au VCC de l'ESP8266
+	> Le GND du FTDI au GND de l'ESP8266
+	> Le VCC du FTDI au VCC de l'ESP8266
 
 Ensuite pour permettre l'affichage des donnees en reel nous avons connecter un ecran OLED sur le meme circuit imprimer.
 Il a de nouveau fallu verifier les connectique pour qu'elle respecte le schema suivant:
@@ -91,12 +91,16 @@ Il a de nouveau fallu verifier les connectique pour qu'elle respecte le schema s
 
 ##Circuit pour le projet final.
 
-Dans le cadre de notre projet nous devions rendre cette objet connecte.Il fallait aussi trouver un moyen de lire les donnees recuperer et de pouvoir alimenter le tous 
+Dans le cadre de notre projet nous devions rendre cette objet connecte.Il fallait aussi trouver un moyen de lire les donnees recuperer et de pouvoir alimenter l'ensemble des composants 
 sans avoir besoin d'etre constamment brancher a un ordinateur.
 Il fallait subvenir au besoin electrique de l'ESP 8266 et de l'ecran oled.
 Nous avons donc concu un circuit imprimer capable d'alimenter tous ces composants.
 L'utilisation d'un panneau solaire nous paraissait etre la plus adapter pour repondre au besoin du projet mais pour fournir le courant minimal necessaire a l'alimentation du projet
-il fallait mettre un panneau delivrant une grande tension. Il est apparu un risque pour les composants. Nous
-avons donc appris comment contourner ce problemes en utilisant un regulateur de tension.
+il fallait mettre un panneau delivrant une tension assez importante. Il est apparu un risque pour les composants. Nous
+avons donc appris comment contourner ce probleme en utilisant un regulateur de tension.
+La conception du circuit a donc pris en compte cette ajout de composant. Pour reguler le flux de tension nous avons ajoutes deux capacites autour du regulateur de tension.
+
+
+
  
 	
