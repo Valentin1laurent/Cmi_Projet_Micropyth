@@ -1,6 +1,6 @@
 #Codage et informatique lie au projet
 
-Ici nous detaillerons les differents code que nous avons developper pour la realisation du projet.
+Ici nous detaillerons les differents codes que nous avons developpes pour la realisation du projet.
 
 
 ##Librairies utilises avec PYTHON
@@ -13,8 +13,8 @@ Ici nous detaillerons les differents code que nous avons developper pour la real
 
 	>>> r=requests.get(url) 
 
-Ces quelques ligne de code permettent de recuperer les donnes d'une page web.
-Il suffit de remplacer le trou laisser dans la variable URL pour notifier la page web ou l'on souhaite recuperer les infos.
+Ces quelques lignes de codes permettent de recuperer les donnees d'une page web.
+Il suffit de remplacer le trou laisser dans la variable URL pour notifier la page web ou l'on souhaite recuperer les informations.
 
 
 	>>> import requests
@@ -29,7 +29,7 @@ L'exemple au dessus permet de charger les informations de la page d'acceuil de W
 
 ###Utilisation d'une API 
 Pour notre projet nous avons besoin de recuperer des donnees sur la meteo a des endroits precis du globe,
-pour cela nous nous sommes tourner vers le site:  
+pour cela nous nous sommes tournes vers le site:  
 
 
 OPENWEATHERMAP.ORG  
@@ -38,13 +38,15 @@ OPENWEATHERMAP.ORG
 
 	>http://api.openweathermap.org/data/2.5/forecast?id={ID}&APPID={APIKEY}
 
-La ligne de code precedente permet de recuperer les donnees meteorologique sur le site.
+La ligne de code precedente permet de recuperer les donnees meteorologique sur le site a l'aide d'une API.Pour pouvoir utiliser celle ci nous nous sommes
+inscrits sur le site et nous avons recu une APIKEY. Cette APIKEY nous permet d'obtenir les donnees meteorologiques legalement pour permettre le bon fonctionnement de notre projet.
+
 
 ###Utilisation du format json 
 
 Les donnees sous le format JSON apparaissent sous la forme d'un dictionnaire.
-On sait qu'un dictionnaire marche grace a la combianaison d'un 'id' et d'une 'cle'.
-On peut donc extraire la donnee souhaite si l'on connait les 'liens' de ce dictionnaire.
+On sait qu'un dictionnaire marche grace a la combinaison d'un 'id' et d'une 'cle'.
+On peut donc extraire la donnee souhaitee si l'on connait les 'liens' propre a ce dictionnaire.
 Voici un petit exemple qui montre comment marche un dictionnaire.
 
 	>>>mon_dictionnaires={'mot de passe': '*', 'pseudo': '6pri1'}
@@ -59,7 +61,7 @@ Voici un petit exemple qui montre comment marche un dictionnaire.
 
 
 Devant la simplicite d'utilisation du format JSON nous avons decide d'incorporer dans notre code la fonction JSON
-qui permettra de crer une arborescence plus simple des donnees et qui nous facilitera l'acces a celle-ci.
+qui permettra de crer une arborescence plus simple des donnees et qui nous facilitera l'acces a celles-ci.
 
 Le code va de nouveau se modifier pour devenir:
 
@@ -104,13 +106,14 @@ On obtient donc l'url finale :
 ##Utilisation de micropython
 
 Pour coder sur le microcontroleur nous avons importer le langage 'Micropython'.C'est un langage simplifier de python:
-il ne contient pas toutes les librairies disponibles sur python mais il permet de retrouver quelque librairie de base et utilise pour 
-controler l'ESP.
+il ne contient pas toutes les librairies disponibles sur python mais il permet de retrouver quelque librairie de base. Ce langage est surtout utilise pour 
+coder des microcontroleurs.
 ## Comment 'flasher' l'ESP8266 et installer micropython
 
 Pour flasher le microcontroleur il faut mettre la borne GPIO0 a la masse.
 A partir de PIP il faut installer ESPTOOL.py
-EN tapant la commande: pip install esptool
+En tapant la commande: 
+	>>>>pip install esptool
 grace a esptool.py on peux effacer ce qui etait jusqu'a present sur l'esp en
 tapant la commande:
 
@@ -129,20 +132,20 @@ Pour installer le nouveau firmware on tape la commande:
 	>>>>import network
 
 -Urequest: elle possede le meme fonctionnement que la librairie request de python,c'est a dire
-qu'elle est utile lors de la recherche de l'API.
+qu'elle est utile lors de la recherche d'url.
 
 -Json: il possede le meme fonctionnement qu'en python , c'est a dire qu'il va creer un dictionnaire de liste.
 
 -Machine:cette librairie servira dans la plupart des cas a connecter l'ecran avec la librairie propre
 a l'ecran SSD1306.
 
--Network:cette librairie sera utiliser pour connecter l'esp par wi-fi a internet.
+-Network:cette librairie sera utilisee pour connecter l'esp par wi-fi a internet.
 
 
 ###Connectique et affichage.
 
 Dans un premier temps nous voulions recuperer les donnees meteorologique en ligne il etait essentiel de connecter l'esp a internet.
-Nous avons utiliser la librairie importer precedemment et nous avons obtenu le code suivant:
+Nous avons utiliser la librairie NETWORK importer precedemment et nous avons obtenu le code suivant:
 
 
 	>>>>sta_if=network.WLAN(network.STA_IF)
@@ -162,7 +165,7 @@ pour l'ecran et le configurer sur le microcontroleur:
 ###Recuperation des donnees en micropython.
 
 Les lignes de code suivantes permettent d'executer le meme programme qu'en python:
-C'est a dire qu'on va recuperer l'API donc l'URL du site et et mettre les differentes donnes en format json.
+C'est a dire qu'on va recuperer l'API donc l'URL du site  et ensuite  mettre les donnees en format json.
 
 
 	>>>>url="http://api.openweathermap.org/data/2.5/weather?id6454414&APPID={APIKEY}
@@ -174,7 +177,7 @@ C'est a dire qu'on va recuperer l'API donc l'URL du site et et mettre les differ
 	>>>>degree=str(int(degre))
 
 Comme dans le code python on identifie les informations que l'on a besoin d'afficher a l'aide des proprietes d'un dictionnaire.
-On identifie donc le nom de la ville ,la temperature en degre et la decription du temps.
+On identifie donc le nom de la ville ,la temperature en degres et la decription du temps.
 
 ###Affichage des informations
 
@@ -226,7 +229,7 @@ Voici le code MICROPYTHON en un seul bloc:
 	>>>>sta_if.connect('<username>','<password>')
 	>>>>i2c=machine.I2C(sc1=machine.pin(2), sda=machine.Pin(0))
 	>>>>oled= ssd1306.SSD1306_I2C(128, 64, i2c)
-	>>>>url="http://api.openweathermap.org/data/2.5/weather?id6454414&APPID={APIKEY}
+	>>>>url="http://api.openweathermap.org/data/2.5/weather?id6454414&APPID={APIKEY}"
 	>>>>r=urequest.get(url)
 	>>>>data=r.json()
 	>>>>ville=data["name"]
@@ -241,5 +244,5 @@ Voici le code MICROPYTHON en un seul bloc:
 	>>>>oled.show()
 
 Apres avoir flasher le microcontroleur avec le langage Micropython utiliser le code ci-dessus permettra de
-recuperer les donnees meteorologique sur le site internet OPENWEATHERMAP et de permettre avec l'utilisation
-d'un ecran SSD1306 d'afficher les informations tirees du site.  
+recuperer les donnees meteorologique sur le site internet OPENWEATHERMAP et de permettre avec
+un ecran SSD1306 d'afficher les informations tirees du site.  
